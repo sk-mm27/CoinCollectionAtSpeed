@@ -1,0 +1,93 @@
+﻿<Window x:Class="CoinCollectionAtSpeed.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoinCollectionAtSpeed"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="450" 
+        Width="800" 
+        KeyDown="Control"
+        WindowStartupLocation="CenterScreen" 
+        Name="ThisWindow" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="{x:Null}">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="5" CornerRadius="10" Padding="10" Margin="5" Background="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Click="RestartGame" FontWeight="Bold" Background="Goldenrod">
+                        <Path Fill="Black" 
+                              Data="M 12 1.7500195 A 1.25 1.25 0 0 0 10.75002 3 A 1.25 1.25 0 0 0 12 4.2499805 C 16.295048 4.2499805 19.75002 7.7050042 19.75002 12 C 19.75002 16.295053 16.295053 19.75002 12 19.75002 C 7.7049929 19.75002 4.2499805 16.295046 4.2499805 12 C 4.2499805 10.27906 4.8066837 8.6963822 5.7499805 7.4141016 L 5.7499805 8.5000195 A 1.25 1.25 0 0 0 7.0000195 9.75 A 1.25 1.25 0 0 0 8.25 8.5000195 L 8.25 4.5 A 1.250125 1.250125 0 0 0 7.0000195 3.2500195 L 3 3.2500195 A 1.25 1.25 0 0 0 1.7500195 4.5 A 1.25 1.25 0 0 0 3 5.7499805 L 3.8761523 5.7499805 C 2.5433863 7.4819684 1.7500195 9.6533062 1.7500195 12 C 1.7500195 17.646134 6.353907 22.24998 12 22.24998 C 17.646127 22.24998 22.24998 17.646127 22.24998 12 C 22.24998 6.3539156 17.646132 1.7500195 12 1.7500195 z" 
+                              Stretch="Fill" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"/>
+                    </Button>
+                    <DockPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock TextAlignment="Center" FontSize="24" Text="МОНЕТЫ: " FontWeight="Bold" Foreground="Goldenrod"/>
+                        <TextBlock x:Name="Score" TextAlignment="Center" FontSize="24" Text="0" FontWeight="Bold" Foreground="Goldenrod"/>
+                    </DockPanel>
+                    <Button Grid.Column="3" Click="CloseGame" Background="Red">
+                        <Path Fill="Black"
+                              Data="M 38.478483 3.6152477 A 1.423605 1.423605 0 0 0 37.4707 4.0331887 A 1.423605 1.423605 0 0 0 37.4707 6.0449508 L 46.714782 15.289033 L 37.4707 24.533183 A 1.423605 1.423605 0 0 0 37.4707 26.544945 A 1.423605 1.423605 0 0 0 39.484397 26.544945 L 48.727546 17.301797 L 57.970694 26.544945 A 1.423605 1.423605 0 0 0 59.984391 26.544945 A 1.423605 1.423605 0 0 0 59.984391 24.533183 L 50.740309 15.289033 L 59.984391 6.0449508 A 1.423605 1.423605 0 0 0 59.984391 4.0331887 A 1.423605 1.423605 0 0 0 58.978544 3.6152477 A 1.423605 1.423605 0 0 0 57.970694 4.0331887 L 48.727546 13.276337 L 39.484397 4.0331887 A 1.423605 1.423605 0 0 0 38.478483 3.6152477 z" 
+                              Stretch="Fill" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"/>
+                    </Button>
+                </Grid>
+
+                <TextBlock Grid.Row="2" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Text="ТАЙМЕР" FontWeight="Bold" Foreground="DarkRed" FontSize="24"/>
+
+                <ProgressBar x:Name="Timer" Grid.Row="3" Value="100" Minimum="0" Maximum="100" Margin="15,5,15,5"/>
+                <Border Grid.Row="3" BorderBrush="Black" BorderThickness="5" CornerRadius="10" Margin="10,0,10,0"/>
+
+                <Border Grid.Row="1" BorderBrush="Black" BorderThickness="5" CornerRadius="10" Margin="10" Padding="10">
+                    <Grid x:Name="PlayingField">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="FigurePlayer" Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="5" CornerRadius="10" Background="AliceBlue" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+        <Border x:Name="ShadingForGameOver" Visibility="Hidden" BorderBrush="Black" BorderThickness="5" CornerRadius="10" Padding="10" Margin="5" Background="#7F000000"/>
+    </Grid>
+</Window>
