@@ -1,4 +1,4 @@
-<img width="790" height="440" alt="2026-05-13_21-14-47" src="https://github.com/user-attachments/assets/3eeb1f1f-d9d4-4173-8182-e35c7cc8f000" />
+<img alt="2026-05-13_21-14-47" src="https://github.com/user-attachments/assets/3eeb1f1f-d9d4-4173-8182-e35c7cc8f000" />
 
 ## **Описание:**
 
